@@ -1,10 +1,10 @@
 import React from 'react';
-
+import Hero from '../../components/hero.tsx';
 const index = () => {
     return (
         <>
             <div>
-                <h2>Home</h2>
+                <Hero />
             </div>
         </>
     );
