@@ -1,14 +1,11 @@
-import { useState } from 'react';
-import reactLogo from './assets/react.svg';
-import viteLogo from '/vite.svg';
 import Home from './pages/home/index';
 import About from './pages/about/index';
 import './App.css';
+import CreateMoviePage from '@/pages/home/CreateMoviePage';
+import EditMoviePage from '@/pages/home/EditMoviePage';
 import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
 
 function App() {
-    const [count, setCount] = useState(0);
-
     return (
         <>
             <Router>
@@ -29,6 +26,8 @@ function App() {
                     <Routes>
                         <Route path="/" element={<Home />} />
                         <Route path="/about" element={<About />} />
+                        <Route path="/create-movie" element={<CreateMoviePage />} />
+                        <Route path="/edit-movie/:id" element={<EditMoviePage />} />
                     </Routes>
                 </div>
             </Router>
