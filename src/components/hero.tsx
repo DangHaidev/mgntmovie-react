@@ -1,0 +1,49 @@
+import React from 'react';
+
+const nav = () => {
+    return (
+        <div>
+            <div className="overflow-hidden bg-gray-900 py-36 sm:py-32 bg-[url(/assets/bg12.webp)]">
+                <div className="mx-auto max-w-full py-30 px-6 lg:px-8">
+                    <div className="mx-auto sm:pl-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2 relative">
+                        <div className="lg:pt-4 lg:pr-8">
+                            <div className="p-5 lg:max-w-2xl">
+                                <h1 className="mt-2 text-4xl font-semibold tracking-tight text-pretty text-white sm:text-5xl">
+                                    Nền tảng cộng đồng dành cho fan của
+                                    Shin-chan
+                                </h1>
+                                <p className="mt-8 text-2xl text-gray-400">
+                                    Nơi bạn có thể giải trí kết nối và giao lưu
+                                    với những người có cùng đam mê!!!
+                                </p>
+                                <button className="my-2.5 lg:my-25">
+                                    Tham gia ngay
+                                </button>
+                                <div>
+                                    <a>FB</a>
+                                    <a>FB</a>
+                                    <a>FB</a>
+                                    <a>FB</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="relative -right-20 top-20">
+                            <img
+                                src="assets/pc.webp"
+                                alt="Product screenshot"
+                                className="rounded-lg max-lg:w-[700px] max-sm:w-[600px] lg:rounded-3xl pl-5 scale-110"
+                            />
+                            <img
+                                src="assets/mobile.webp"
+                                alt=""
+                                className="rounded-lg max-lg:w-[140px] max-sm:w-[100px] max-sm:-bottom-10 max-sm:-left-20  lg:rounded-3xl -bottom-15 -left-33 absolute w-55"
+                            />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
+};
+
+export default nav;

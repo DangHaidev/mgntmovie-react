@@ -1,11 +1,21 @@
 import React from 'react';
-
-const About = () => {
+import Hero from '../../components/hero.tsx';
+import Explore from '../../components/explore.tsx';
+import Comunity from '../../components/comunity.tsx';
+import About from '../../components/about.tsx';
+import Footer from '../../components/footer.tsx';
+const index = () => {
     return (
-        <div>
-            <h1>About</h1>
-        </div>
+        <>
+            <div>
+                <Hero />
+                <Explore />
+                <Comunity />
+                <About />
+                <Footer />
+            </div>
+        </>
     );
 };
 
-export default About;
+export default index;
