@@ -4,7 +4,7 @@ const explore = () => {
     return (
         <>
             <div className="bg-[url(/assets/bg.webp)] bg-no-repeat bg-center bg-cover">
-                <div className="p-50">
+                <div className="p-10 lg:p-50">
                     <div className="max-w-6xl mx-auto">
                         <div className="text-center">
                             <h1>
@@ -26,7 +26,7 @@ const explore = () => {
                     </div>
 
                     <div className="flex justify-center relative">
-                        <div className="relative mt-[3rem] max-lg:max-w-[550px] max-sm:w-[350px]">
+                        <div className="relative mt-[3rem] max-lg:max-w-9/10 max-sm:w-full">
                             {/* Image background */}
                             <img
                                 alt="video"
@@ -49,16 +49,16 @@ const explore = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="absolute size-50 top-1 -left-15">
+                        <div className="absolute size-50 top-1 -left-15 max-lg:hidden">
                             <img src="/assets/one.webp" alt="" />
                         </div>
-                        <div className="absolute size-50 top-1 -right-15">
+                        <div className="absolute size-50 top-1 -right-15 max-lg:hidden">
                             <img src="/assets/two.webp" alt="" />
                         </div>
-                        <div className="absolute size-50 bottom-1 -left-15">
+                        <div className="absolute size-50 bottom-1 -left-15 max-lg:hidden">
                             <img src="/assets/three.webp" alt="" />
                         </div>
-                        <div className="absolute size-50 bottom-1 -right-15">
+                        <div className="absolute size-50 bottom-1 -right-15 max-lg:hidden">
                             <img src="/assets/four.webp" alt="" />
                         </div>
                     </div>

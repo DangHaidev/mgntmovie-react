@@ -4,13 +4,13 @@ import { Link } from 'react-router-dom';
 const footer = () => {
     return (
         <>
-            <div className="p-20">
+            <div className="p-10 md:p-20">
                 <div className="flex-col flex gap-10 sm:gap-15 lg:flex-row lg:gap-32 ">
                     <div className="flex flex-col">
                         <div>
                             <Link className="flex items-center" to="/">
                                 <img
-                                    src="public/assets/logo1.webp"
+                                    src="assets/logo1.webp"
                                     className="size-20"
                                     alt="logo"
                                 />
