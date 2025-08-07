@@ -3,6 +3,7 @@ import Hero from '../../components/hero.tsx';
 import Explore from '../../components/explore.tsx';
 import Comunity from '../../components/comunity.tsx';
 import About from '../../components/about.tsx';
+import Footer from '../../components/footer.tsx';
 const index = () => {
     return (
         <>
@@ -11,6 +12,7 @@ const index = () => {
                 <Explore />
                 <Comunity />
                 <About />
+                <Footer />
             </div>
         </>
     );
