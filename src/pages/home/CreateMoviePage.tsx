@@ -10,7 +10,12 @@ const CreateMoviePage = () => {
 
     const handleFinish = async (values: Movie) => {
         try {
-            createMovie(values);
+            const formattedValues = {
+                ...values,
+                genre: values.genre.toString(), // Chuyển mảng thành chuỗi
+            };
+            console.log('Creating movie with data:', formattedValues);
+            createMovie(formattedValues);
             message.success('Movie created successfully!');
             form.resetFields();
         } catch (error) {
@@ -21,14 +26,25 @@ const CreateMoviePage = () => {
 
     return (
         <Form layout="vertical" form={form} onFinish={handleFinish}>
-            <Form.Item label="Title" name="title" rules={[{ required: true, message: 'Please enter the movie title' }]}>
+            <Form.Item
+                label="Title"
+                name="title"
+                rules={[
+                    { required: true, message: 'Please enter the movie title' },
+                ]}
+            >
                 <Input />
             </Form.Item>
 
             <Form.Item
                 label="Genre"
                 name="genre"
-                rules={[{ required: true, message: 'Please select at least one genre' }]}
+                rules={[
+                    {
+                        required: true,
+                        message: 'Please select at least one genre',
+                    },
+                ]}
             >
                 <Select mode="multiple" placeholder="Select genres">
                     <Option value="Action">Action</Option>
@@ -46,7 +62,11 @@ const CreateMoviePage = () => {
                 <InputNumber min={1900} max={2100} style={{ width: '100%' }} />
             </Form.Item>
 
-            <Form.Item label="Director" name="director" rules={[{ required: true, message: 'Enter director name' }]}>
+            <Form.Item
+                label="Director"
+                name="director"
+                rules={[{ required: true, message: 'Enter director name' }]}
+            >
                 <Input />
             </Form.Item>
 

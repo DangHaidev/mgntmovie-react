@@ -32,7 +32,12 @@ const EditMoviePage = () => {
 
     const handleUpdate = async (updatedMovie: Movie) => {
         try {
-            await updateMovie(id as string, updatedMovie);
+            console.log(updatedMovie);
+            const formattedValues = {
+                ...updatedMovie,
+                genre: updatedMovie.genre.toString(),
+            };
+            await updateMovie(id as string, formattedValues);
             message.success('Cập nhật phim thành công!');
             navigate('/');
         } catch (err) {
@@ -46,14 +51,25 @@ const EditMoviePage = () => {
 
     return (
         <Form layout="vertical" form={form} onFinish={handleUpdate}>
-            <Form.Item label="Title" name="title" rules={[{ required: true, message: 'Please enter the movie title' }]}>
+            <Form.Item
+                label="Title"
+                name="title"
+                rules={[
+                    { required: true, message: 'Please enter the movie title' },
+                ]}
+            >
                 <Input />
             </Form.Item>
 
             <Form.Item
                 label="Genre"
                 name="genre"
-                rules={[{ required: true, message: 'Please select at least one genre' }]}
+                rules={[
+                    {
+                        required: true,
+                        message: 'Please select at least one genre',
+                    },
+                ]}
             >
                 <Select mode="multiple" placeholder="Select genres">
                     <Option value="Action">Action</Option>
@@ -71,7 +87,11 @@ const EditMoviePage = () => {
                 <InputNumber min={1900} max={2100} style={{ width: '100%' }} />
             </Form.Item>
 
-            <Form.Item label="Director" name="director" rules={[{ required: true, message: 'Enter director name' }]}>
+            <Form.Item
+                label="Director"
+                name="director"
+                rules={[{ required: true, message: 'Enter director name' }]}
+            >
                 <Input />
             </Form.Item>
 
