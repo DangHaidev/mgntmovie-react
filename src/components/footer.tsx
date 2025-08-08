@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const footer = () => {
     return (
         <>
-            <div className="p-10 md:p-20">
+            <div id="footer" className="p-10 md:p-20">
                 <div className="flex-col flex gap-10 sm:gap-15 lg:flex-row lg:gap-32 ">
                     <div className="flex flex-col">
                         <div>

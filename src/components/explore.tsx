@@ -1,9 +1,13 @@
+import { Button } from 'antd';
 import React from 'react';
 
 const explore = () => {
     return (
         <>
-            <div className="bg-[url(/assets/bg.webp)] bg-no-repeat bg-center bg-cover">
+            <div
+                id="explore"
+                className="bg-[url(/assets/bg.webp)] bg-no-repeat bg-center bg-cover"
+            >
                 <div className="p-10 lg:p-50">
                     <div className="max-w-6xl mx-auto">
                         <div className="text-center">
@@ -20,9 +24,15 @@ const explore = () => {
                             </h3>
                         </div>
                     </div>
-                    <div className="flex justify-center gap-2">
-                        <button type="button">Khám phá ngay</button>
-                        <button type="button">Tìm hiểu thêm</button>
+                    <div className="flex justify-center gap-5">
+                        <div className="w-2xs">
+                            <Button className="custom-btn" type="default">
+                                Khám phá ngay
+                            </Button>
+                        </div>
+                        <div>
+                            <Button type="default">Tìm hiểu thêm</Button>
+                        </div>
                     </div>
 
                     <div className="flex justify-center relative">

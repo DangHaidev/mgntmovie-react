@@ -10,7 +10,7 @@ function App() {
         <>
             <Router>
                 <div>
-                    <nav>
+                    {/* <nav>
                         <ul>
                             <li>
                                 <Link to="/">Home</Link>
@@ -19,15 +19,18 @@ function App() {
                                 <Link to="/about">About</Link>
                             </li>
                         </ul>
-                    </nav>
-                    <div>
-                        <h1 className="text-3xl font-bold">Hello world!</h1>
-                    </div>
+                    </nav> */}
                     <Routes>
                         <Route path="/" element={<Home />} />
                         <Route path="/about" element={<About />} />
-                        <Route path="/create-movie" element={<CreateMoviePage />} />
-                        <Route path="/edit-movie/:id" element={<EditMoviePage />} />
+                        <Route
+                            path="/create-movie"
+                            element={<CreateMoviePage />}
+                        />
+                        <Route
+                            path="/edit-movie/:id"
+                            element={<EditMoviePage />}
+                        />
                     </Routes>
                 </div>
             </Router>
