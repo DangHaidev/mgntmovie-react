@@ -1,14 +1,12 @@
 import axios from 'axios';
 import type { Movie } from '@/types/Movie';
 
-const API_BASE_URL = 'https://api.example.com/movies';
+const API_BASE_URL = 'http://localhost:5001/api/movie';
 const TIMEOUT = 5000;
 
 export const fetchMovies = async (): Promise<Movie[]> => {
     try {
-        const response = await axios.get<Movie[]>(API_BASE_URL, {
-            timeout: TIMEOUT,
-        });
+        const response = await axios.get<Movie[]>(API_BASE_URL);
         return response.data;
     } catch (error) {
         console.error('Error fetching movies:', error);
@@ -30,9 +28,7 @@ export const fetchMovieById = async (id: string): Promise<Movie> => {
 
 export const createMovie = async (movie: Movie): Promise<Movie> => {
     try {
-        const response = await axios.post<Movie>(API_BASE_URL, movie, {
-            timeout: TIMEOUT,
-        });
+        const response = await axios.post<Movie>(API_BASE_URL, movie);
         return response.data;
     } catch (error) {
         console.error('Error creating movie:', error);
@@ -42,9 +38,7 @@ export const createMovie = async (movie: Movie): Promise<Movie> => {
 
 export const updateMovie = async (id: string, movie: Movie): Promise<Movie> => {
     try {
-        const response = await axios.put<Movie>(`${API_BASE_URL}/${id}`, movie, {
-            timeout: TIMEOUT,
-        });
+        const response = await axios.put<Movie>(`${API_BASE_URL}/${id}`, movie);
         return response.data;
     } catch (error) {
         console.error(`Error updating movie with ID ${id}:`, error);
