@@ -21,8 +21,8 @@ function App() {
                         </ul>
                     </nav> */}
                     <Routes>
-                        <Route path="/" element={<Home />} />
-                        <Route path="/about" element={<About />} />
+                        <Route path="/" element={<About />} />
+                        <Route path="/home" element={<Home />} />
                         <Route
                             path="/create-movie"
                             element={<CreateMoviePage />}

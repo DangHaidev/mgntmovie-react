@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button } from 'antd';
+import { Link } from 'react-router-dom';
 
 const nav = () => {
     return (
@@ -17,17 +18,19 @@ const nav = () => {
                                     Nơi bạn có thể giải trí kết nối và giao lưu
                                     với những người có cùng đam mê!!!
                                 </p>
-                                <div className="lg:mr-40">
-                                    {' '}
-                                    <Button
-                                        type="default"
-                                        className="custom-btn mt-[20px] max-lg:h-[44px] max-lg:px-[24px] lg:my-25 lg:h-[72px] lg:w-[397px]"
-                                    >
-                                        <h2 className="lg:text-[24px] font-bold text-amber-50">
-                                            Tham gia ngay
-                                        </h2>
-                                    </Button>
-                                </div>
+                                <Link to={'/home'}>
+                                    <div className="lg:mr-40">
+                                        {' '}
+                                        <Button
+                                            type="default"
+                                            className="custom-btn mt-[20px] max-lg:h-[44px] max-lg:px-[24px] lg:my-25 lg:h-[72px] lg:w-[397px]"
+                                        >
+                                            <h2 className="lg:text-[24px] font-bold text-amber-50">
+                                                Tham gia ngay
+                                            </h2>
+                                        </Button>
+                                    </div>
+                                </Link>
                             </div>
                         </div>
                         <div className="relative -right-20 top-20">
