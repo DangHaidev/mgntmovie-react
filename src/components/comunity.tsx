@@ -1,3 +1,4 @@
+import Ourbtn from './ourbtn';
 import React from 'react';
 
 const comunity = () => {
@@ -13,10 +14,7 @@ const comunity = () => {
                             Với hơn 25k thành viên và đa dạng nội dung về
                             Shin-chan, cùng chúng mình nhập hội nhé
                         </h3>
-                        <div className="flex gap-2">
-                            <button>Tham gia ngay</button>
-                            <button>Tìm hiểu thêm</button>
-                        </div>
+                        <Ourbtn />
                     </div>
                     <div className="overflow-hidden lg:w-1/2 object-center object-cover rounded-b-4xl lg:rounded-tr-4xl">
                         <img src="/assets/fami.webp" alt="" />

@@ -1,5 +1,5 @@
-import { Button } from 'antd';
 import React from 'react';
+import Ourbtn from './ourbtn';
 
 const explore = () => {
     return (
@@ -24,17 +24,8 @@ const explore = () => {
                             </h3>
                         </div>
                     </div>
-                    <div className="flex justify-center gap-5">
-                        <div className="w-2xs">
-                            <Button className="custom-btn" type="default">
-                                Khám phá ngay
-                            </Button>
-                        </div>
-                        <div>
-                            <Button type="default">Tìm hiểu thêm</Button>
-                        </div>
-                    </div>
 
+                    <Ourbtn />
                     <div className="flex justify-center relative">
                         <div className="relative mt-[3rem] max-lg:max-w-9/10 max-sm:w-full">
                             {/* Image background */}

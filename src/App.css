@@ -28,7 +28,15 @@
         #060606;
 }
 .custom-btn {
-    padding: 40px;
-    background-color: rgb(222 113 54);
+    padding: 30px 40px;
+    background: linear-gradient(to bottom, #f9a825, #e65100);
     width: 100%;
+}
+.custom-second-btn {
+    padding: 30px 40px;
+    background: linear-gradient(to right, #2f2f2f, #3e3a36);
+    width: 100%;
+}
+.ant-btn:hover {
+    background: linear-gradient(to bottom, #f9a825, #c40d07) !important;
 }

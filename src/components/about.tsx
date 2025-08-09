@@ -1,4 +1,5 @@
 import React from 'react';
+import Highlightbox from './Highlightbox';
 
 const about = () => {
     return (
@@ -13,34 +14,31 @@ const about = () => {
                     </p>
                 </div>
                 <div className="lg:flex max-md:flex max-md:flex-col max-lg:grid max-lg:grid-cols-2 gap-10 md:my-20 pt-20 text-center">
-                    <div className="border-2 py-15 px-3 rounded-2xl bg-gradient-to-r from-gray-900 via-gray-600 to-yellow-950">
-                        <h2 className="text-3xl mb-4">Tâm huyết</h2>
-                        <p className="text-gray-400">
-                            Chúng mình luôn trao chuốt từng câu chữ trong mỗi
-                            bản dịch
-                        </p>
-                    </div>
-                    <div className="border-2 py-15 px-3 rounded-2xl bg-gradient-to-r from-gray-900 via-gray-600 to-yellow-950">
-                        <h2 className="text-3xl mb-4">Tâm huyết</h2>
-                        <p className="text-gray-400">
-                            Chúng mình luôn trao chuốt từng câu chữ trong mỗi
-                            bản dịch
-                        </p>
-                    </div>
-                    <div className="border-2 py-15 px-3 rounded-2xl bg-gradient-to-r from-gray-900 via-gray-600 to-yellow-950">
-                        <h2 className="text-3xl mb-4">Tâm huyết</h2>
-                        <p className="text-gray-400">
-                            Chúng mình luôn trao chuốt từng câu chữ trong mỗi
-                            bản dịch
-                        </p>
-                    </div>
-                    <div className="border-2 py-15 px-3 rounded-2xl bg-gradient-to-r from-gray-900 via-gray-600 to-yellow-950">
-                        <h2 className="text-3xl mb-4">Tâm huyết</h2>
-                        <p className="text-gray-400">
-                            Chúng mình luôn trao chuốt từng câu chữ trong mỗi
-                            bản dịch
-                        </p>
-                    </div>
+                    <Highlightbox
+                        title={'Tâm huyết'}
+                        content={
+                            'Chúng mình luôn trao chuốt từng câu chữ trong mỗi bản dịch.'
+                        }
+                    />
+                    <Highlightbox
+                        title={'Kinh nghiệm'}
+                        content={
+                            'Chúng mình am hiểu tiếng Nhật để dịch hay và sát nghĩa.'
+                        }
+                    />
+
+                    <Highlightbox
+                        title={'Sáng tạo'}
+                        content={
+                            'Không ngừng đổi mới để đem đến những trải nghiệm độc đáo.'
+                        }
+                    />
+                    <Highlightbox
+                        title={'Đam mê'}
+                        content={
+                            'Dịch phim và kết nối cộng đồng là niềm vui của bọn mình.'
+                        }
+                    />
                 </div>
             </div>
         </>
