@@ -1,12 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { Typography } from 'antd';
 import MovieTable from '@/components/MovieTable';
 import type { Movie } from '@/types/Movie';
-import { Button } from 'antd';
 import { useNavigate } from 'react-router-dom';
 import { fetchMovies } from '@/services/movieApi';
-
-const { Title } = Typography;
 
 const HomePage: React.FC = () => {
     const [movies, setMovies] = useState<Movie[]>([]);
@@ -22,84 +18,26 @@ const HomePage: React.FC = () => {
     };
     useEffect(() => {
         fetchData();
-        const mockMovies: Movie[] = [
-            {
-                id: 1,
-                title: 'Inception',
-                genre: ['Sci-Fi', 'Thriller'],
-                releaseYear: 2010,
-                director: 'Christopher Nolan',
-                description:
-                    'A thief who steals corporate secrets through dream-sharing technology.',
-                posterUrl: 'https://via.placeholder.com/100x150',
-            },
-            {
-                id: 2,
-                title: 'The Matrix',
-                genre: ['Action', 'Sci-Fi'],
-                releaseYear: 1999,
-                director: 'The Wachowskis',
-                description:
-                    'A computer hacker learns about the true nature of his reality.',
-                posterUrl: 'https://via.placeholder.com/100x150',
-            },
-            {
-                id: 3,
-                title: 'Inception',
-                genre: ['Sci-Fi', 'Thriller'],
-                releaseYear: 2010,
-                director: 'Christopher Nolan',
-                description:
-                    'A thief who steals corporate secrets through dream-sharing technology.',
-                posterUrl: 'https://via.placeholder.com/100x150',
-            },
-            {
-                id: 4,
-                title: 'Inception',
-                genre: ['Sci-Fi', 'Thriller'],
-                releaseYear: 2010,
-                director: 'Christopher Nolan',
-                description:
-                    'A thief who steals corporate secrets through dream-sharing technology.',
-                posterUrl: 'https://via.placeholder.com/100x150',
-            },
-            {
-                id: 5,
-                title: 'Inception',
-                genre: ['Sci-Fi', 'Thriller'],
-                releaseYear: 2010,
-                director: 'Christopher Nolan',
-                description:
-                    'A thief who steals corporate secrets through dream-sharing technology.',
-                posterUrl: 'https://via.placeholder.com/100x150',
-            },
-            {
-                id: 6,
-                title: 'Inception',
-                genre: ['Sci-Fi', 'Thriller'],
-                releaseYear: 2010,
-                director: 'Christopher Nolan',
-                description:
-                    'A thief who steals corporate secrets through dream-sharing technology.',
-                posterUrl: 'https://via.placeholder.com/100x150',
-            },
-        ];
-
-        // setMovies(mockMovies);
     }, []);
 
     return (
-        <div className="mb-4">
-            <div className="mb-4">
-                <Title level={2}>🎬 Movie List</Title>
-                <Button
-                    type="primary"
+        <div className="p-6">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
+                <h2 className="text-2xl font-bold flex items-center gap-2">
+                    🎬 Movie List
+                </h2>
+                <button
                     onClick={() => navigate('/create-movie')}
+                    className="bg-blue-600 hover:bg-blue-700 text-white font-medium px-5 py-2 rounded-lg shadow-sm transition"
                 >
                     Create Movie
-                </Button>
+                </button>
             </div>
-            <MovieTable movies={movies} onDeleteSuccess={fetchData} />
+
+            {/* Table */}
+            <div className="bg-white shadow-md rounded-lg p-4">
+                <MovieTable movies={movies} onDeleteSuccess={fetchData} />
+            </div>
         </div>
     );
 };
