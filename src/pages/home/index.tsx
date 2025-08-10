@@ -1,12 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { Typography } from 'antd';
 import MovieTable from '@/components/MovieTable';
 import type { Movie } from '@/types/Movie';
-import { Button } from 'antd';
 import { useNavigate } from 'react-router-dom';
 import { fetchMovies } from '@/services/movieApi';
-
-const { Title } = Typography;
 
 const HomePage: React.FC = () => {
     const [movies, setMovies] = useState<Movie[]>([]);
