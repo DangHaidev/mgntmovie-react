@@ -1,4 +1,3 @@
-import React from 'react';
 import Highlightbox from './Highlightbox';
 
 const about = () => {

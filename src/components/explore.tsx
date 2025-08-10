@@ -1,4 +1,3 @@
-import React from 'react';
 import Ourbtn from './ourbtn';
 
 const explore = () => {

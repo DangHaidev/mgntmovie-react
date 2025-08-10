@@ -1,12 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 function nav() {
+    // eslint-disable-next-line react-hooks/rules-of-hooks
     const [hidden, setHidden] = useState(false);
     let lastScrollTop = 0;
 
     // Hàm để theo dõi sự kiện cuộn
     const handleScroll = () => {
-        let currentScroll =
+        const currentScroll =
             window.pageYOffset || document.documentElement.scrollTop;
         if (currentScroll > lastScrollTop) {
             setHidden(true);
@@ -17,6 +18,7 @@ function nav() {
     };
 
     // Hook useEffect để gắn sự kiện scroll khi component mount
+    // eslint-disable-next-line react-hooks/rules-of-hooks
     useEffect(() => {
         window.addEventListener('scroll', handleScroll);
 

@@ -1,5 +1,5 @@
 // src/pages/edit/[id].tsx  (hoặc edit/index.tsx nếu dùng params)
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { Form, Input, InputNumber, Button, Select, message } from 'antd';
 import type { Movie } from '@/types/Movie';

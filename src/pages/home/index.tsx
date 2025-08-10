@@ -22,68 +22,68 @@ const HomePage: React.FC = () => {
     };
     useEffect(() => {
         fetchData();
-        const mockMovies: Movie[] = [
-            {
-                id: 1,
-                title: 'Inception',
-                genre: ['Sci-Fi', 'Thriller'],
-                releaseYear: 2010,
-                director: 'Christopher Nolan',
-                description:
-                    'A thief who steals corporate secrets through dream-sharing technology.',
-                posterUrl: 'https://via.placeholder.com/100x150',
-            },
-            {
-                id: 2,
-                title: 'The Matrix',
-                genre: ['Action', 'Sci-Fi'],
-                releaseYear: 1999,
-                director: 'The Wachowskis',
-                description:
-                    'A computer hacker learns about the true nature of his reality.',
-                posterUrl: 'https://via.placeholder.com/100x150',
-            },
-            {
-                id: 3,
-                title: 'Inception',
-                genre: ['Sci-Fi', 'Thriller'],
-                releaseYear: 2010,
-                director: 'Christopher Nolan',
-                description:
-                    'A thief who steals corporate secrets through dream-sharing technology.',
-                posterUrl: 'https://via.placeholder.com/100x150',
-            },
-            {
-                id: 4,
-                title: 'Inception',
-                genre: ['Sci-Fi', 'Thriller'],
-                releaseYear: 2010,
-                director: 'Christopher Nolan',
-                description:
-                    'A thief who steals corporate secrets through dream-sharing technology.',
-                posterUrl: 'https://via.placeholder.com/100x150',
-            },
-            {
-                id: 5,
-                title: 'Inception',
-                genre: ['Sci-Fi', 'Thriller'],
-                releaseYear: 2010,
-                director: 'Christopher Nolan',
-                description:
-                    'A thief who steals corporate secrets through dream-sharing technology.',
-                posterUrl: 'https://via.placeholder.com/100x150',
-            },
-            {
-                id: 6,
-                title: 'Inception',
-                genre: ['Sci-Fi', 'Thriller'],
-                releaseYear: 2010,
-                director: 'Christopher Nolan',
-                description:
-                    'A thief who steals corporate secrets through dream-sharing technology.',
-                posterUrl: 'https://via.placeholder.com/100x150',
-            },
-        ];
+        // const mockMovies: Movie[] = [
+        //     {
+        //         id: 1,
+        //         title: 'Inception',
+        //         genre: "Sci-Fi', 'Thriller'",
+        //         releaseYear: 2010,
+        //         director: 'Christopher Nolan',
+        //         description:
+        //             'A thief who steals corporate secrets through dream-sharing technology.',
+        //         posterUrl: 'https://via.placeholder.com/100x150',
+        //     },
+        //     {
+        //         id: 2,
+        //         title: 'The Matrix',
+        //         genre: "['Action', 'Sci-Fi']",
+        //         releaseYear: 1999,
+        //         director: 'The Wachowskis',
+        //         description:
+        //             'A computer hacker learns about the true nature of his reality.',
+        //         posterUrl: 'https://via.placeholder.com/100x150',
+        //     },
+        //     {
+        //         id: 3,
+        //         title: 'Inception',
+        //         genre: "['Sci-Fi', 'Thriller']",
+        //         releaseYear: 2010,
+        //         director: 'Christopher Nolan',
+        //         description:
+        //             'A thief who steals corporate secrets through dream-sharing technology.',
+        //         posterUrl: 'https://via.placeholder.com/100x150',
+        //     },
+        //     {
+        //         id: 4,
+        //         title: 'Inception',
+        //         genre: "['Sci-Fi', 'Thriller']",
+        //         releaseYear: 2010,
+        //         director: 'Christopher Nolan',
+        //         description:
+        //             'A thief who steals corporate secrets through dream-sharing technology.',
+        //         posterUrl: 'https://via.placeholder.com/100x150',
+        //     },
+        //     {
+        //         id: 5,
+        //         title: 'Inception',
+        //         genre: "[Sci-Fi', 'Thriller']",
+        //         releaseYear: 2010,
+        //         director: 'Christopher Nolan',
+        //         description:
+        //             'A thief who steals corporate secrets through dream-sharing technology.',
+        //         posterUrl: 'https://via.placeholder.com/100x150',
+        //     },
+        //     {
+        //         id: 6,
+        //         title: 'Inception',
+        //         genre: "Sci-Fi', 'Thriller",
+        //         releaseYear: 2010,
+        //         director: 'Christopher Nolan',
+        //         description:
+        //             'A thief who steals corporate secrets through dream-sharing technology.',
+        //         posterUrl: 'https://via.placeholder.com/100x150',
+        //     },
+        // ];
 
         // setMovies(mockMovies);
     }, []);

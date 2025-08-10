@@ -3,7 +3,7 @@ import About from './pages/about/index';
 import './App.css';
 import CreateMoviePage from '@/pages/home/CreateMoviePage';
 import EditMoviePage from '@/pages/home/EditMoviePage';
-import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 function App() {
     return (

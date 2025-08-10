@@ -1,5 +1,4 @@
 import Ourbtn from './ourbtn';
-import React from 'react';
 
 const comunity = () => {
     return (
