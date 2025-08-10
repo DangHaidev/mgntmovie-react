@@ -1,4 +1,3 @@
-// src/pages/edit/[id].tsx  (hoặc edit/index.tsx nếu dùng params)
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { Form, Input, InputNumber, Button, Select, message } from 'antd';
@@ -25,14 +24,11 @@ const EditMoviePage = () => {
             }
         };
 
-        if (id) {
-            fetchData();
-        }
+        if (id) fetchData();
     }, [id]);
 
     const handleUpdate = async (updatedMovie: Movie) => {
         try {
-            console.log(updatedMovie);
             const formattedValues = {
                 ...updatedMovie,
                 genre: updatedMovie.genre.toString(),
@@ -44,82 +40,107 @@ const EditMoviePage = () => {
             console.error('Lỗi cập nhật:', err);
             message.error('Lỗi khi cập nhật phim');
         }
-        navigate('/');
     };
 
-    if (!movie) return <div>Loading...</div>;
+    if (!movie)
+        return <div className="text-center text-lg p-6">Loading...</div>;
 
     return (
-        <Form layout="vertical" form={form} onFinish={handleUpdate}>
-            <Form.Item
-                label="Title"
-                name="title"
-                rules={[
-                    { required: true, message: 'Please enter the movie title' },
-                ]}
+        <div className="max-w-3xl mx-auto bg-white shadow-lg rounded-xl p-8 mt-10">
+            <h1 className="text-2xl font-bold text-gray-800 mb-6">
+                ✏️ Cập nhật phim
+            </h1>
+            <Form
+                layout="vertical"
+                form={form}
+                onFinish={handleUpdate}
+                className="space-y-4"
             >
-                <Input />
-            </Form.Item>
+                <Form.Item
+                    label={<span className="font-medium">Title</span>}
+                    name="title"
+                    rules={[
+                        {
+                            required: true,
+                            message: 'Please enter the movie title',
+                        },
+                    ]}
+                >
+                    <Input className="rounded-lg border-gray-300" />
+                </Form.Item>
 
-            <Form.Item
-                label="Genre"
-                name="genre"
-                rules={[
-                    {
-                        required: true,
-                        message: 'Please select at least one genre',
-                    },
-                ]}
-            >
-                <Select mode="multiple" placeholder="Select genres">
-                    <Option value="Action">Action</Option>
-                    <Option value="Drama">Drama</Option>
-                    <Option value="Comedy">Comedy</Option>
-                    <Option value="Horror">Horror</Option>
-                </Select>
-            </Form.Item>
+                <Form.Item
+                    label={<span className="font-medium">Genre</span>}
+                    name="genre"
+                    rules={[
+                        {
+                            required: true,
+                            message: 'Please select at least one genre',
+                        },
+                    ]}
+                >
+                    <Select
+                        mode="multiple"
+                        placeholder="Select genres"
+                        className="w-full"
+                    >
+                        <Option value="Action">Action</Option>
+                        <Option value="Drama">Drama</Option>
+                        <Option value="Comedy">Comedy</Option>
+                        <Option value="Horror">Horror</Option>
+                    </Select>
+                </Form.Item>
 
-            <Form.Item
-                label="Release Year"
-                name="releaseYear"
-                rules={[{ required: true, message: 'Enter release year' }]}
-            >
-                <InputNumber min={1900} max={2100} style={{ width: '100%' }} />
-            </Form.Item>
+                <Form.Item
+                    label={<span className="font-medium">Release Year</span>}
+                    name="releaseYear"
+                    rules={[{ required: true, message: 'Enter release year' }]}
+                >
+                    <InputNumber
+                        min={1900}
+                        max={2100}
+                        className="w-full rounded-lg border-gray-300"
+                    />
+                </Form.Item>
 
-            <Form.Item
-                label="Director"
-                name="director"
-                rules={[{ required: true, message: 'Enter director name' }]}
-            >
-                <Input />
-            </Form.Item>
+                <Form.Item
+                    label={<span className="font-medium">Director</span>}
+                    name="director"
+                    rules={[{ required: true, message: 'Enter director name' }]}
+                >
+                    <Input className="rounded-lg border-gray-300" />
+                </Form.Item>
 
-            <Form.Item
-                label="Description"
-                name="description"
-                rules={[{ required: true, message: 'Enter a description' }]}
-            >
-                <TextArea rows={3} />
-            </Form.Item>
+                <Form.Item
+                    label={<span className="font-medium">Description</span>}
+                    name="description"
+                    rules={[{ required: true, message: 'Enter a description' }]}
+                >
+                    <TextArea rows={3} className="rounded-lg border-gray-300" />
+                </Form.Item>
 
-            <Form.Item
-                label="Poster URL"
-                name="posterUrl"
-                rules={[
-                    { required: true, message: 'Enter poster URL' },
-                    { type: 'url', message: 'Must be a valid URL' },
-                ]}
-            >
-                <Input />
-            </Form.Item>
+                <Form.Item
+                    label={<span className="font-medium">Poster URL</span>}
+                    name="posterUrl"
+                    rules={[
+                        { required: true, message: 'Enter poster URL' },
+                        { type: 'url', message: 'Must be a valid URL' },
+                    ]}
+                >
+                    <Input className="rounded-lg border-gray-300" />
+                </Form.Item>
 
-            <Form.Item>
-                <Button type="primary" htmlType="submit">
-                    Update Movie
-                </Button>
-            </Form.Item>
-        </Form>
+                <Form.Item>
+                    <Button
+                        type="primary"
+                        htmlType="submit"
+                        className="bg-blue-600 hover:bg-blue-700 px-6 py-2 rounded-lg text-white"
+                    >
+                        Update Movie
+                    </Button>
+                </Form.Item>
+            </Form>
+        </div>
     );
 };
 

@@ -12,10 +12,10 @@ const CreateMoviePage = () => {
         try {
             const formattedValues = {
                 ...values,
-                genre: values.genre.toString(), // Chuyển mảng thành chuỗi
+                genre: values.genre.toString(),
             };
             console.log('Creating movie with data:', formattedValues);
-            createMovie(formattedValues);
+            await createMovie(formattedValues);
             message.success('Movie created successfully!');
             form.resetFields();
         } catch (error) {
@@ -25,76 +25,107 @@ const CreateMoviePage = () => {
     };
 
     return (
-        <Form layout="vertical" form={form} onFinish={handleFinish}>
-            <Form.Item
-                label="Title"
-                name="title"
-                rules={[
-                    { required: true, message: 'Please enter the movie title' },
-                ]}
-            >
-                <Input />
-            </Form.Item>
+        <div className="max-w-3xl mx-auto bg-white shadow-lg rounded-lg p-8">
+            <h2 className="text-2xl font-bold mb-6">🎬 Create Movie</h2>
 
-            <Form.Item
-                label="Genre"
-                name="genre"
-                rules={[
-                    {
-                        required: true,
-                        message: 'Please select at least one genre',
-                    },
-                ]}
+            <Form
+                layout="vertical"
+                form={form}
+                onFinish={handleFinish}
+                className="space-y-4"
             >
-                <Select mode="multiple" placeholder="Select genres">
-                    <Option value="Action">Action</Option>
-                    <Option value="Drama">Drama</Option>
-                    <Option value="Comedy">Comedy</Option>
-                    <Option value="Horror">Horror</Option>
-                </Select>
-            </Form.Item>
+                {/* Title */}
+                <Form.Item
+                    label="Title"
+                    name="title"
+                    rules={[
+                        {
+                            required: true,
+                            message: 'Please enter the movie title',
+                        },
+                    ]}
+                >
+                    <Input className="rounded-md" />
+                </Form.Item>
 
-            <Form.Item
-                label="Release Year"
-                name="releaseYear"
-                rules={[{ required: true, message: 'Enter release year' }]}
-            >
-                <InputNumber min={1900} max={2100} style={{ width: '100%' }} />
-            </Form.Item>
+                {/* Genre */}
+                <Form.Item
+                    label="Genre"
+                    name="genre"
+                    rules={[
+                        {
+                            required: true,
+                            message: 'Please select at least one genre',
+                        },
+                    ]}
+                >
+                    <Select
+                        mode="multiple"
+                        placeholder="Select genres"
+                        className="rounded-md"
+                    >
+                        <Option value="Action">Action</Option>
+                        <Option value="Drama">Drama</Option>
+                        <Option value="Comedy">Comedy</Option>
+                        <Option value="Horror">Horror</Option>
+                    </Select>
+                </Form.Item>
 
-            <Form.Item
-                label="Director"
-                name="director"
-                rules={[{ required: true, message: 'Enter director name' }]}
-            >
-                <Input />
-            </Form.Item>
+                {/* Release Year */}
+                <Form.Item
+                    label="Release Year"
+                    name="releaseYear"
+                    rules={[{ required: true, message: 'Enter release year' }]}
+                >
+                    <InputNumber
+                        min={1900}
+                        max={2100}
+                        className="w-full rounded-md"
+                    />
+                </Form.Item>
 
-            <Form.Item
-                label="Description"
-                name="description"
-                rules={[{ required: true, message: 'Enter a description' }]}
-            >
-                <TextArea rows={3} />
-            </Form.Item>
+                {/* Director */}
+                <Form.Item
+                    label="Director"
+                    name="director"
+                    rules={[{ required: true, message: 'Enter director name' }]}
+                >
+                    <Input className="rounded-md" />
+                </Form.Item>
 
-            <Form.Item
-                label="Poster URL"
-                name="posterUrl"
-                rules={[
-                    { required: true, message: 'Enter poster URL' },
-                    { type: 'url', message: 'Must be a valid URL' },
-                ]}
-            >
-                <Input />
-            </Form.Item>
+                {/* Description */}
+                <Form.Item
+                    label="Description"
+                    name="description"
+                    rules={[{ required: true, message: 'Enter a description' }]}
+                >
+                    <TextArea rows={3} className="rounded-md" />
+                </Form.Item>
 
-            <Form.Item>
-                <Button type="primary" htmlType="submit">
-                    Create Movie
-                </Button>
-            </Form.Item>
-        </Form>
+                {/* Poster URL */}
+                <Form.Item
+                    label="Poster URL"
+                    name="posterUrl"
+                    rules={[
+                        { required: true, message: 'Enter poster URL' },
+                        { type: 'url', message: 'Must be a valid URL' },
+                    ]}
+                >
+                    <Input className="rounded-md" />
+                </Form.Item>
+
+                {/* Submit Button */}
+                <Form.Item>
+                    <Button
+                        type="primary"
+                        htmlType="submit"
+                        className="bg-blue-600 hover:bg-blue-700 px-6 py-2 rounded-md"
+                    >
+                        Create Movie
+                    </Button>
+                </Form.Item>
+            </Form>
+        </div>
     );
 };
 
