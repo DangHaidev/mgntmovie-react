@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 function nav() {
-    const [hidden, setHidden] = useState(false); // State để theo dõi trạng thái ẩn/hiện navbar
+    const [hidden, setHidden] = useState(false);
     let lastScrollTop = 0;
 
     // Hàm để theo dõi sự kiện cuộn
@@ -13,14 +13,13 @@ function nav() {
         } else {
             setHidden(false);
         }
-        lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Đảm bảo vị trí cuộn không bị âm
+        lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
     };
 
     // Hook useEffect để gắn sự kiện scroll khi component mount
     useEffect(() => {
         window.addEventListener('scroll', handleScroll);
 
-        // Cleanup khi component unmount
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
     return (
@@ -54,25 +53,25 @@ function nav() {
                 <div className="flex items-center gap-[26px] rounded-full border  p-[13px] border-custom bg-gradient-custom2 max-lg:hidden">
                     <a
                         href="#"
-                        className="text-[#FCFCFD] bg-gradient-custom shadow-custom-inset rounded-full px-[26px] py-[13px] text-[20px] text-[#BFBFBF] font-[400] transition-all hover:text-[#FCFCFD] active:translate-y-1"
+                        className="text-[#FCFCFD] bg-gradient-custom shadow-custom-inset rounded-full px-[26px] py-[13px] text-[20px] font-[400] transition-all hover:text-[#FCFCFD] active:translate-y-1"
                     >
                         Trang chủ
                     </a>
                     <a
                         href="#explore"
-                        className="rounded-full px-[26px] py-[13px] text-[20px] text-[#BFBFBF] font-[400] transition-all hover:text-[#FCFCFD] active:translate-y-1"
+                        className="rounded-full px-[26px] py-[13px] text-[20px] font-[400] transition-all"
                     >
                         Khám phá
                     </a>
                     <a
                         href="#community"
-                        className="rounded-full px-[26px] py-[13px] text-[20px] text-[#BFBFBF] font-[400] transition-all hover:text-[#FCFCFD] active:translate-y-1"
+                        className="rounded-full px-[26px] py-[13px] text-[20px] font-[400] transition-all"
                     >
                         Cộng đồng
                     </a>
                     <a
                         href="#footer"
-                        className="rounded-full px-[26px] py-[13px] text-[20px] text-[#BFBFBF] font-[400] transition-all hover:text-[#FCFCFD] active:translate-y-1"
+                        className="rounded-full px-[26px] py-[13px] text-[20px] font-[400] transition-all"
                     >
                         Liên hệ
                     </a>
